@@ -1,0 +1,46 @@
+using System.Collections.ObjectModel;
+
+namespace zadanie
+{
+    public partial class MainPage : ContentPage
+    {
+        public ObservableCollection<TaskItem> Tasks { get; set; } = new();
+
+        public MainPage()
+        {
+            InitializeComponent();
+            TasksCollection.ItemsSource = Tasks;
+
+            Tasks.Add(new TaskItem { Name = "Itemek" });
+            Tasks.Add(new TaskItem { Name = "Itemek" });
+            Tasks.Add(new TaskItem { Name = "Itemek" });
+        }
+
+        private void OnAddTaskClicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(NewTaskEntry.Text))
+            {
+                Tasks.Add(new TaskItem { Name = NewTaskEntry.Text });
+                NewTaskEntry.Text = string.Empty;
+            }
+        }
+
+        private void OnTaskCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (sender is CheckBox checkbox && checkbox.BindingContext is TaskItem task)
+            {
+                task.IsDone = e.Value;
+                var items = Tasks.ToList();
+                Tasks.Clear();
+                foreach (var t in items)
+                    Tasks.Add(t);
+            }
+        }
+    }
+
+    public class TaskItem
+    {
+        public string Name { get; set; }
+        public bool IsDone { get; set; }
+    }
+}
