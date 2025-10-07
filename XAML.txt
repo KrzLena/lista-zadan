@@ -73,9 +73,6 @@
                                            TextColor="#8B4513"
                                            FontAttributes="Bold"
                                            x:Name="TaskLabel"/>
-                                    <Label Text="⋮⋮⋮"
-                                           FontSize="18"
-                                           TextColor="#8B4513"/>
                                 </HorizontalStackLayout>
                             </Frame>
                         </DataTemplate>
