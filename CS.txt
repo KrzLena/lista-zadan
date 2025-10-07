@@ -11,9 +11,9 @@ namespace zadanie
             InitializeComponent();
             TasksCollection.ItemsSource = Tasks;
 
-            Tasks.Add(new TaskItem { Name = "Itemek" });
-            Tasks.Add(new TaskItem { Name = "Itemek" });
-            Tasks.Add(new TaskItem { Name = "Itemek" });
+            Tasks.Add(new TaskItem { Name = "Napij sie wody" });
+            Tasks.Add(new TaskItem { Name = "Umyj sie" });
+            Tasks.Add(new TaskItem { Name = "Posciel łozko" });
         }
 
         private void OnAddTaskClicked(object sender, EventArgs e)
