@@ -11,10 +11,25 @@ namespace zadanie
             InitializeComponent();
             TasksCollection.ItemsSource = Tasks;
 
-            Tasks.Add(new TaskItem { Name = "Napij sie wody" });
-            Tasks.Add(new TaskItem { Name = "Umyj sie" });
-            Tasks.Add(new TaskItem { Name = "Posciel łozko" });
+            Tasks.Add(new TaskItem { Name = "Napij się wody" });
+            Tasks.Add(new TaskItem { Name = "Umyj się" });
+            Tasks.Add(new TaskItem { Name = "Pościel łóżko" });
+
+            
+            ToolbarItems.Add(new ToolbarItem
+            {
+                Text = "Loguj",
+                Order = ToolbarItemOrder.Primary,
+                Priority = 0,
+                Command = new Command(OnLoginClicked)
+            });
         }
+
+        private async void OnLoginClicked()
+        {
+            await Navigation.PushAsync(new LoginPage());
+        }
+
 
         private void OnAddTaskClicked(object sender, EventArgs e)
         {
