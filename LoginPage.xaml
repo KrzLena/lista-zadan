@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zadanie.LoginPage"
+             Title="Logowanie"
+             BackgroundColor="#133B59">
+
+	<VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+		<Label Text="Zaloguj się"
+               FontSize="26"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+		<Entry x:Name="EmailEntry"
+               Placeholder="E-mail"
+               Keyboard="Email"
+               TextColor="White"
+               PlaceholderColor="#bbb"/>
+
+		<Entry x:Name="PasswordEntry"
+               Placeholder="Hasło"
+               IsPassword="True"
+               TextColor="White"
+               PlaceholderColor="#bbb"/>
+
+		<Button Text="Zaloguj"
+                BackgroundColor="#F9DC7D"
+                TextColor="#8B4513"
+                CornerRadius="8"
+                Clicked="OnLoginButtonClicked"/>
+
+		<Label x:Name="MessageLabel"
+               TextColor="White"
+               FontAttributes="Italic"
+               HorizontalOptions="Center" />
+	</VerticalStackLayout>
+</ContentPage>
